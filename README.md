@@ -2,6 +2,8 @@
 
 Hardware PCB files for the ESP32-based Milano Smart Park project
 
+# Note: The PCB v7 files are old and deprecated. New design files need to be made to reflect the current state of the project!
+
 	- ESP32-DevkitC with ESP32-WROVER-B module:
       
                          ____________________
