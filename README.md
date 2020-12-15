@@ -13,7 +13,7 @@ Hardware PCB files for the ESP32-based Milano Smart Park project
 	- Winsen's ZE25-O3 Ozone sensor (Analog, using ESP32's own ADC)
 	- OLED Display SH1106 1.3" 128X64 (IIC)
 	
-### Quick schematic of the devboard:  
+### Quick schematic of the ESP32 devkit:  
                          ____________________
                         |                     |
                3V3--- o-|-3V3             GND-|-o
