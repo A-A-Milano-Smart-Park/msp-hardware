@@ -37,8 +37,8 @@ Hardware PCB files for the ESP32-based Milano Smart Park project
         reserved, don't use! x-|-CMD(SD)      (SD)D0-|-x reserved, don't use!
                      VCC --- o-|-5V          (SD)CLK-|-x reserved, don't use!
                                |                     |
-                               |      _______        |
-                               |     |       |       |
-                               |     |       |       |
-                               |_____|       |_______|
-                                     |_______|
+                               |       _______       |
+                               |      |       |      |
+                               |      |       |      |
+                               |______|       |______|
+                                      |_______|
