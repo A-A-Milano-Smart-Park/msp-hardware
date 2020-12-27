@@ -6,35 +6,36 @@ Hardware PCB files for the ESP32-based Milano Smart Park project
 
 - ESP32-DevkitC with ESP32-WROVER-B module with attached:
 
+	- OLED Display SH1106 1.3" 128X64 (IIC)
+	- SD Card Module
 	- Adafruit's BME680 sensor (IIC)
-	- Adafruit's PMS5003 Air Quality sensor (RS232 Serial)
+	- Plantower's PMS5003 Air Quality sensor (Serial)
 	- seeed's Grove Multichannel Gas Sensor MiCS-6814 v1.0 (IIC) (With custom modifications)
 		+ currently implementing the new MultiGas sensor v2.0
 	- Winsen's ZE25-O3 Ozone sensor (Analog, using ESP32's own ADC)
-	- OLED Display SH1106 1.3" 128X64 (IIC)
 	
-### Quick schematic of the ESP32 devkit:  
-                         ____________________
+### Quick schematic of the ESP32 /w WROVER-B devkit:  
+                         _____________________
                         |                     |
-               3V3--- o-|-3V3             GND-|-o
-                      o-|-EN              D23-|-o --- MOSI SDCARD
-                      o-|-VP(D36)         D22-|-o --- SCL OLED + BME + MICS6814
-                      o-|-VN(D39)     (D1)TX0-|-o
-                      o-|-D34         (D3)RX0-|-o
-     ZE25-O3 D0 ----- o-|-D35             D21-|-o --- SDA OLED + BME + MICS6814
-     ZE25-O3 A0 ----- o-|-D32             GND-|-o
-                      o-|-D33             D19-|-o --- MISO SDCARD + OLED
-                      o-|-D25             D18-|-o --- SCK SDCARD
-                      o-|-D26             D5 -|-o --- CS SDCARD
-                      o-|-D27             D17-|-o  -x-x- protected, don't use
-       RX SENS PM --- o-|-D14             D16-|-o  -x-x- protected, don't use
-       TX SENS PM --- o-|-D12             D4 -|-o
-                      o-|-GND             D0 -|-o
-                      o-|-D13             D2 -|-o
-                      o-|-SD2  ---xxx     D15-|-o  -x-x- protected, don't use
-                      o-|-SD3  ---xxx---  SD1-|-o  -x-x- protected, don't use
-                      o-|-CMD  ---xxx---  SD0-|-o  -x-x- protected, don't use
-       VCC-SD+OLED--- o-|-5Vin    xxx---  CLK-|-o  -x-x- protected, don't use
+                      o-|-3V3             GND-|-o
+                      o-|-EN           GPIO23-|-o --- MOSI SDCARD
+                      o-|-VP(GPIO36)   GPIO22-|-o --- IIC SCL
+                      o-|-VN(GPIO39)(GPIO1)TX-|-o (UART0 debug)
+                      o-|-GPIO34    (GPIO3)RX-|-o (UART0 debug)
+       ZE25-O3 D0 --- o-|-GPIO35       GPIO21-|-o --- IIC SDA
+       ZE25-O3 A0 --- o-|-GPIO32          GND-|-o
+                      o-|-GPIO33       GPIO19-|-o --- MISO SDCARD
+                      o-|-GPIO25       GPIO18-|-o --- SCK SDCARD
+                      o-|-GPIO26       GPIO5 -|-o --- CS SDCARD
+                      o-|-GPIO27       GPIO17-|-x reserved, don't use!
+       PMS5003 RX --- o-|-GPIO14       GPIO16-|-x reserved, don't use!
+       PMS5003 TX --- o-|-GPIO12       GPIO4 -|-o
+                      o-|-GND          GPIO0 -|-o
+                      o-|-GPIO13       GPIO2 -|-o
+ reserved, don't use! x-|-D2(SD)       GPIO15-|-o
+ reserved, don't use! x-|-D3(SD)       (SD)D1-|-x reserved, don't use!
+ reserved, don't use! x-|-CMD(SD)      (SD)D0-|-x reserved, don't use!
+              VCC --- o-|-5V          (SD)CLK-|-x reserved, don't use!
                         |                     |
                         |      _______        |
                         |     |       |       |
