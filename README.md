@@ -11,7 +11,6 @@ Hardware PCB files for the ESP32-based Milano Smart Park project
 	- Adafruit's BME680 sensor (IIC)
 	- Plantower's PMS5003 Air Quality sensor (Serial)
 	- seeed's Grove Multichannel Gas Sensor MiCS-6814 v1.0 (IIC) (With custom modifications)
-		+ currently implementing the new MultiGas sensor v2.0
 	- Winsen's ZE25-O3 Ozone sensor (Analog, using ESP32's own ADC)
 	
 ### Quick schematic of the ESP32 /w WROVER-B devkit:
