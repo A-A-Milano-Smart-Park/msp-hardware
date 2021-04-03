@@ -21,7 +21,7 @@ Hardware PCB files for the ESP32-based Milano Smart Park project
                              o-|-VP(GPIO36)   GPIO22-|-o --- IIC SCL
                              o-|-VN(GPIO39)(GPIO1)TX-|-o (UART0 debug)
                              o-|-GPIO34    (GPIO3)RX-|-o (UART0 debug)
-        ZE25-O3 D0(ADC1) --- o-|-GPIO35       GPIO21-|-o --- IIC SDA
+                             o-|-GPIO35       GPIO21-|-o --- IIC SDA
         ZE25-O3 A0(ADC1) --- o-|-GPIO32          GND-|-o
                              o-|-GPIO33       GPIO19-|-o --- MISO SDCARD
                              o-|-GPIO25       GPIO18-|-o --- SCK SDCARD
