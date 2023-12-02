@@ -29,7 +29,7 @@ Hardware PCB files for the ESP32-based Milano Smart Park project
 	                             o-|-GPIO26       GPIO5 -|-o --- CS SDCARD
 	                             o-|-GPIO27       GPIO17-|-x reserved, don't use!
 	      (UART2) PMS5003 RX --- o-|-GPIO14       GPIO16-|-x reserved, don't use!
-	      (UART2) PMS5003 TX --- o-|-GPIO12       GPIO4 -|-o --- diode --- SIM800L RST
+	      (UART2) PMS5003 TX --- o-|-GPIO12       GPIO4 -|-o --- | diode --- SIM800L RST
 	             SIM800L GND --- o-|-GND          GPIO0 -|-o
 	 (UART1) SIM800L SIM_RXD --- o-|-GPIO13       GPIO2 -|-o
 	        reserved, don't use! x-|-D2(SD)       GPIO15-|-o --- SIM800L SIM_TXD (UART1)
